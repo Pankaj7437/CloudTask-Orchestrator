@@ -2,10 +2,11 @@
 Master 40+ Page Academic Report Generator (Cloned from Reference Template)
 Base Template: pankaj_report_final.docx (Preserving exact first page and college logo image1.jpeg)
 Student: Pankaj Sharma (24EGJCS147)
-Guide / HOD: Dr. Pradeep Jha | Faculty Coordinator: Mr. Asharam Gurjar
+Guide / HOD: Dr. Pradeep Jha | Faculty Coordinator: Mr. Ratnaram Tanwar
 Institution: Department of Computer Science & Engineering, Global Institute of Technology Jaipur
 Project Title: PipelineDoctor: Real-Time Cloud Infrastructure & SRE Optimizer
 Course: Analysis of Algorithms Laboratory (CS-501)
+Session: 2026-27 | Semester: 5th Semester
 """
 
 import os
@@ -160,63 +161,39 @@ def format_academic_table(table, col_widths, headers, data):
         for idx, width in enumerate(col_widths):
             row.cells[idx].width = Inches(width)
 
-def add_screenshot_placeholder(doc, fig_number, title, caption_text):
+def add_figure_image(doc, img_path, fig_number, title, caption_text, width_inches=5.7):
     """
-    Renders a framed academic placeholder box for UI screenshots with clear user instructions.
+    Renders an authentic, centered UI screenshot image with professional academic caption.
     """
-    table = doc.add_table(rows=1, cols=1)
-    table.alignment = WD_TABLE_ALIGNMENT.CENTER
-    cell = table.cell(0, 0)
-    set_cell_background(cell, "F8FAFC")
-    set_cell_margins(cell, top=260, bottom=260, left=320, right=320)
+    if not os.path.exists(img_path):
+        print(f"Warning: image path '{img_path}' not found!")
+        return
+        
+    p_img = doc.add_paragraph()
+    p_img.alignment = WD_ALIGN_PARAGRAPH.CENTER
+    p_img.paragraph_format.space_before = Pt(10)
+    p_img.paragraph_format.space_after = Pt(4)
+    p_img.paragraph_format.keep_with_next = True
     
-    # Border styling - dashed blue frame
-    tcPr = cell._tc.get_or_add_tcPr()
-    borders = parse_xml(
-        f'<w:tcBorders {nsdecls("w")}>'
-        f'<w:top w:val="dashed" w:sz="16" w:space="0" w:color="0284C7"/>'
-        f'<w:left w:val="dashed" w:sz="16" w:space="0" w:color="0284C7"/>'
-        f'<w:bottom w:val="dashed" w:sz="16" w:space="0" w:color="0284C7"/>'
-        f'<w:right w:val="dashed" w:sz="16" w:space="0" w:color="0284C7"/>'
-        f'</w:tcBorders>'
-    )
-    tcPr.append(borders)
+    run_img = p_img.add_run()
+    run_img.add_picture(img_path, width=Inches(width_inches))
     
-    p = cell.paragraphs[0]
-    p.alignment = WD_ALIGN_PARAGRAPH.CENTER
-    p.paragraph_format.space_before = Pt(12)
-    p.paragraph_format.space_after = Pt(6)
-    
-    r_icon = p.add_run("📸\n")
-    r_icon.font.size = Pt(20)
-    
-    r_box = p.add_run(f"[ --- PASTE UI SCREENSHOT FOR FIGURE {fig_number} HERE --- ]\n")
-    r_box.font.name = 'Times New Roman'
-    r_box.font.size = Pt(11)
-    r_box.bold = True
-    r_box.font.color.rgb = RGBColor(2, 132, 199)
-    
-    r_sub = p.add_run(f"Resolution Recommended: 1920x1080 | Module: {title}")
-    r_sub.font.name = 'Times New Roman'
-    r_sub.font.size = Pt(9.5)
-    r_sub.italic = True
-    r_sub.font.color.rgb = RGBColor(100, 116, 139)
-    
-    # Caption below the box
+    # Professional academic figure caption
     p_cap = doc.add_paragraph()
     p_cap.alignment = WD_ALIGN_PARAGRAPH.CENTER
-    p_cap.paragraph_format.space_before = Pt(6)
-    p_cap.paragraph_format.space_after = Pt(16)
+    p_cap.paragraph_format.space_before = Pt(4)
+    p_cap.paragraph_format.space_after = Pt(14)
+    p_cap.paragraph_format.keep_with_next = False
     
     r_fignum = p_cap.add_run(f"Figure {fig_number}: ")
     r_fignum.font.name = 'Times New Roman'
-    r_fignum.font.size = Pt(10.5)
+    r_fignum.font.size = Pt(10)
     r_fignum.bold = True
     r_fignum.font.color.rgb = RGBColor(15, 23, 42)
     
     r_figcap = p_cap.add_run(f"{title} — {caption_text}")
     r_figcap.font.name = 'Times New Roman'
-    r_figcap.font.size = Pt(10.5)
+    r_figcap.font.size = Pt(10)
     r_figcap.italic = True
     r_figcap.font.color.rgb = RGBColor(51, 65, 85)
 

@@ -89,15 +89,14 @@ python build_full_cloned_report.py
 
 The repository includes a comprehensive 40+ page technical project report:
 * 📄 **[`CloudTask_AoA_Project_Report.docx`](CloudTask_AoA_Project_Report.docx)**
-* **Word Count**: 11,578 words | 37 Academic Tables | 12 Framed Screenshot Callouts
+* **Word Count**: 11,419 words | 25 Academic Tables | 12 Authentic High-Resolution UI Screenshots
 * **Reference Template Match**: Sliced directly from `pankaj_report_final.docx`, preserving:
   - Exact first page layout with the **Global Institute of Technology Jaipur** college logo (`image1.jpeg`).
-  - Submitted by: **Pankaj Sharma (24EGJCS147)**, 2nd Year, 4th Semester.
-  - Submitted to: **Dr. Pradeep Jha (HOD-CSE)** & **Mr. Asharam Gurjar (AoA Lab In-Charge)**.
+  - Submitted by: **Pankaj Sharma (24EGJCS147)**, 3rd Year, 5th Semester (Session: 2026-27).
+  - Submitted to: **Dr. Pradeep Jha (HOD-CSE)** & **Mr. Ratnaram Tanwar (AoA Lab Coordinator)**.
   - Exact academic margins (1.25" left margin, 1.0" top/bottom/right) and Times New Roman typography.
-  - **12 Framed Screenshot Placeholders:**
-    `[ --- PASTE UI SCREENSHOT FOR FIGURE 4.X HERE --- ]`
-    making it effortless for the student to paste live UI screenshots into Word!
+  - **12 Authentic Embedded UI Screenshots** (Figures 3.1–3.4 and Figures 4.1–4.8) illustrating real-time manifest ingestion, dynamic SRE remediation, interactive SVG workflow DAGs, cascading chaos blast-radius outages, 0/1 Knapsack DP grids, Dijkstra/Floyd-Warshall routing, and Chart.js empirical curves.
+  - **Zero Empty Pages & Zero Internship Certificates**: Clean continuous flow with no leftover placeholder boxes.
 
 ---
 
@@ -109,9 +108,10 @@ CloudTask-AoA-Orchestrator/
 ├── benchmark.py                 # Empirical benchmark runner
 ├── benchmark_results.json       # Benchmark datasets (n=500 to 100k)
 ├── build_full_cloned_report.py  # Master 40+ page docx report compiler
-├── report_builder.py            # Typography & screenshot placeholder utilities
+├── report_builder.py            # Typography & screenshot figure utilities
 ├── CloudTask_AoA_Project_Report.docx  # Compiled Word technical report (40+ pages)
 ├── pankaj_report_final.docx     # Reference college template with logo
+├── screenshots/                 # 12 Organized High-Resolution UI Screenshots
 └── gui/                         # Interactive Real-Time Web Platform
     ├── index.html               # Real-time SRE dashboard & dropzone
     ├── style.css                # Dark glassmorphism stylesheet
