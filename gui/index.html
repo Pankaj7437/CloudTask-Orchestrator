@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NexusOps — Autonomous Cloud Infrastructure & Workload Platform</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <a href="#" class="nav-brand">
+      <div class="brand-badge">⚡</div>
+      <span class="brand-title">NexusOps</span>
+      <span class="brand-tag">Enterprise v2.4</span>
+    </a>
+    <div class="nav-stats">
+      <div class="stat-pill">
+        <div class="pulse-dot"></div>
+        <span>Cluster: <strong>us-east-prod-1</strong></span>
+      </div>
+      <div class="stat-pill">
+        <span>Active Pods: <strong>1,480</strong></span>
+      </div>
+      <div class="stat-pill">
+        <span>Health: <strong style="color: #10b981;">99.99% Operational</strong></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- App Layout -->
+  <div class="app-layout">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-label">Platform</div>
+      <div class="sidebar-link active" data-tab="tab-overview">
+        <span class="icon">📊</span> Fleet Overview
+      </div>
+
+      <div class="sidebar-label">Workload Services</div>
+      <div class="sidebar-link" data-tab="tab-logs">
+        <span class="icon">⚡</span> Telemetry Stream
+      </div>
+      <div class="sidebar-link" data-tab="tab-pipelines">
+        <span class="icon">🔄</span> CI/CD Pipelines
+      </div>
+      <div class="sidebar-link" data-tab="tab-allocator">
+        <span class="icon">📦</span> Resource Optimizer
+      </div>
+      <div class="sidebar-link" data-tab="tab-network">
+        <span class="icon">🌐</span> Global Traffic Mesh
+      </div>
+      <div class="sidebar-link" data-tab="tab-ha">
+        <span class="icon">🛡️</span> Fault Tolerance
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="content-area">
+
+      <!-- ================= 1. FLEET OVERVIEW ================= -->
+      <section id="tab-overview" class="view-panel active">
+        <div class="view-header">
+          <div class="view-category">Infrastructure Control Plane</div>
+          <h1 class="view-title">Cluster Operations Dashboard</h1>
+          <p class="view-subtitle">
+            Autonomous workload placement, pipeline dependency scheduling, low-latency traffic routing, and real-time telemetry processing across distributed hybrid-cloud nodes.
+          </p>
+        </div>
+
+        <div class="grid-4">
+          <div class="panel-card kpi-card">
+            <span class="kpi-label">Node Utilization</span>
+            <span class="kpi-value">78.4%</span>
+            <span class="kpi-trend">↑ 4.2% vs last week</span>
+          </div>
+          <div class="panel-card kpi-card">
+            <span class="kpi-label">Average Ingress Latency</span>
+            <span class="kpi-value">11.2 ms</span>
+            <span class="kpi-trend" style="color: #38bdf8;">Optimal routing path active</span>
+          </div>
+          <div class="panel-card kpi-card">
+            <span class="kpi-label">Pipeline Velocity</span>
+            <span class="kpi-value">100% DAG</span>
+            <span class="kpi-trend">Zero circular deadlocks</span>
+          </div>
+          <div class="panel-card kpi-card">
+            <span class="kpi-label">Fault Isolation</span>
+            <span class="kpi-value">92 Zones</span>
+            <span class="kpi-trend">Full rack anti-affinity</span>
+          </div>
+        </div>
+
+        <div class="grid-2">
+          <div class="panel-card">
+            <div class="card-header">
+              <div>
+                <h3 class="card-title">Active Platform Services</h3>
+                <p class="card-desc">Production modules running across the cluster</p>
+              </div>
+            </div>
+            <div class="table-wrap">
+              <table class="product-table">
+                <thead>
+                  <tr>
+                    <th>Subsystem</th>
+                    <th>Core Capability</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>Telemetry Stream Ingest</strong></td>
+                    <td>High-speed multi-threaded event ordering</td>
+                    <td><span class="status-tag tag-active">Active</span></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Workflow DAG Engine</strong></td>
+                    <td>Automated build pipeline dependency resolution</td>
+                    <td><span class="status-tag tag-active">Active</span></td>
+                  </tr>
+                  <tr>
+                    <td><strong>VM Bin-Packing Allocator</strong></td>
+                    <td>Revenue-maximizing container packing under RAM limits</td>
+                    <td><span class="status-tag tag-active">Active</span></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Dynamic Mesh Router</strong></td>
+                    <td>Lowest-latency inter-datacenter gateway routing</td>
+                    <td><span class="status-tag tag-active">Active</span></td>
+                  </tr>
+                  <tr>
+                    <td><strong>High-Availability Matrix</strong></td>
+                    <td>Non-conflicting rack placement across fault domains</td>
+                    <td><span class="status-tag tag-active">Active</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="panel-card">
+            <div class="card-header">
+              <div>
+                <h3 class="card-title">Real-Time Cluster Health</h3>
+                <p class="card-desc">Subsystem status & automated diagnostics</p>
+              </div>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 1rem; margin-top: 0.5rem;">
+              <div style="display: flex; justify-content: space-between; font-size: 0.85rem; padding-bottom: 0.75rem; border-bottom: 1px solid var(--border-subtle);">
+                <span style="color: var(--text-secondary);">Network Mesh Partition Risk</span>
+                <strong style="color: #10b981;">0% (Fully Resilient)</strong>
+              </div>
+              <div style="display: flex; justify-content: space-between; font-size: 0.85rem; padding-bottom: 0.75rem; border-bottom: 1px solid var(--border-subtle);">
+                <span style="color: var(--text-secondary);">Log Stream Ingestion Throughput</span>
+                <strong style="color: #38bdf8;">142,000 events/sec</strong>
+              </div>
+              <div style="display: flex; justify-content: space-between; font-size: 0.85rem; padding-bottom: 0.75rem; border-bottom: 1px solid var(--border-subtle);">
+                <span style="color: var(--text-secondary);">Inter-DC Backbone Fiber Overhead</span>
+                <strong style="color: #10b981;">Minimized (27 ms overlay)</strong>
+              </div>
+              <div style="display: flex; justify-content: space-between; font-size: 0.85rem;">
+                <span style="color: var(--text-secondary);">Pod Collision Probability</span>
+                <strong style="color: #10b981;">0.00% (Strict Anti-Affinity)</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= 2. TELEMETRY STREAM ================= -->
+      <section id="tab-logs" class="view-panel">
+        <div class="view-header">
+          <div class="view-category">High-Throughput Ingestion</div>
+          <h1 class="view-title">Telemetry Log Stream & Analytics Engine</h1>
+          <p class="view-subtitle">
+            Ingest and sequence high-frequency asynchronous telemetry logs into strict chronological order using optimized single-threaded and multi-core parallel streaming engines.
+          </p>
+        </div>
+
+        <div class="grid-2">
+          <div class="panel-card">
+            <div class="card-header">
+              <div>
+                <h3 class="card-title">Stream Configuration</h3>
+                <p class="card-desc">Simulate live distributed server log generation</p>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Batch Size (records per cycle):</label>
+              <div class="slider-wrapper">
+                <input type="range" id="sort-n-slider" min="1000" max="100000" step="1000" value="10000">
+                <span class="slider-indicator" id="sort-n-val">10,000</span>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Log Traffic Pattern:</label>
+              <select id="sort-distribution">
+                <option value="random">Distributed Asynchronous Jitter (Standard Influx)</option>
+                <option value="nearly_sorted">Near-Sequential Stream (Buffered Pipeline)</option>
+                <option value="reversed">Peak Spike Reverse Influx (Stress Test)</option>
+              </select>
+            </div>
+
+            <div class="btn-row" style="margin-top: 1.25rem;">
+              <button class="btn btn-primary" id="btn-run-single-sort">⚡ Process Stream Batch</button>
+              <button class="btn btn-success" id="btn-run-full-curve">📈 Run High-Load Benchmark</button>
+            </div>
+
+            <div style="margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid var(--border-subtle);">
+              <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem; font-size: 0.85rem;">
+                <span style="color: var(--text-secondary);">Direct Partitioning Latency:</span>
+                <strong id="qs-time-display" style="font-family: var(--font-mono); color: #38bdf8;">-- ms</strong>
+              </div>
+              <div style="display: flex; justify-content: space-between; font-size: 0.85rem;">
+                <span style="color: var(--text-secondary);">Multi-Worker Parallel Latency:</span>
+                <strong id="ms-time-display" style="font-family: var(--font-mono); color: #10b981;">-- ms</strong>
+              </div>
+            </div>
+          </div>
+
+          <div class="panel-card">
+            <div class="card-header">
+              <div>
+                <h3 class="card-title">Ingestion Performance Curve</h3>
+                <p class="card-desc">Real-time processing latency (ms) vs event volume</p>
+              </div>
+            </div>
+            <div style="height: 250px; position: relative;">
+              <canvas id="sortChart"></canvas>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel-card">
+          <div class="card-header">
+            <div>
+              <h3 class="card-title">Throughput Benchmark Summary</h3>
+              <p class="card-desc">Empirical telemetry scaling metrics across batch tiers</p>
+            </div>
+          </div>
+          <div class="table-wrap">
+            <table class="product-table" id="sort-benchmark-table">
+              <thead>
+                <tr>
+                  <th>Stream Volume (events)</th>
+                  <th>Direct Processing (ms)</th>
+                  <th>Multi-Core Engine (ms)</th>
+                  <th>Throughput Capacity</th>
+                  <th>Preferred Engine</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- Populated dynamically -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= 3. CI/CD PIPELINES ================= -->
+      <section id="tab-pipelines" class="view-panel">
+        <div class="view-header">
+          <div class="view-category">Workflow Orchestration</div>
+          <h1 class="view-title">CI/CD Pipeline & Dependency Engine</h1>
+          <p class="view-subtitle">
+            Model, validate, and execute complex continuous deployment workflows. Automatically calculate linear deployment stages, detect circular deadlocks, and assess downstream impact radius.
+          </p>
+        </div>
+
+        <div class="grid-2">
+          <div class="panel-card">
+            <div class="card-header">
+              <div>
+                <h3 class="card-title">Pipeline Dependency Graph (DAG)</h3>
+                <p class="card-desc">Visual execution flow of containerized build stages</p>
+              </div>
+            </div>
+
+            <div class="canvas-box">
+              <svg id="dag-svg" class="interactive-canvas"></svg>
+            </div>
+
+            <div class="btn-row" style="margin-top: 1rem;">
+              <button class="btn btn-primary" id="btn-run-topological">▶ Compute Execution Order</button>
+              <button class="btn" id="btn-toggle-cycle">⚠️ Inject Test Deadlock</button>
+              <button class="btn" id="btn-reset-dag">🔄 Reset Graph</button>
+            </div>
+
+            <div id="topological-result-box" style="margin-top: 1rem; padding: 0.85rem; background: rgba(0,0,0,0.3); border-radius: var(--radius-sm); font-size: 0.85rem;">
+              Execution Sequence: <span id="topological-order-text" style="color: #38bdf8; font-weight: 600;">Ready...</span>
+            </div>
+          </div>
+
+          <div class="panel-card">
+            <div class="card-header">
+              <div>
+                <h3 class="card-title">Downstream Dependency Impact Matrix</h3>
+                <p class="card-desc">Transitive reachability: Identifies full blast radius if a stage fails</p>
+              </div>
+            </div>
+            <div class="table-wrap" style="max-height: 380px;">
+              <table class="product-table" id="warshall-table" style="text-align: center;">
+                <!-- Populated dynamically -->
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= 4. RESOURCE OPTIMIZER ================= -->
+      <section id="tab-allocator" class="view-panel">
+        <div class="view-header">
+          <div class="view-category">Cost & Capacity Management</div>
+          <h1 class="view-title">Autonomous Container & VM Bin-Packer</h1>
+          <p class="view-subtitle">
+            Maximize business revenue and container utilization on host virtual machines under hardware memory constraints.
+          </p>
+        </div>
+
+        <div class="grid-2">
+          <div class="panel-card">
+            <div class="card-header">
+              <div>
+                <h3 class="card-title">Host Instance Configuration</h3>
+                <p class="card-desc">Tune host node RAM capacity and review container requests</p>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Host VM Memory Capacity Limit:</label>
+              <div class="slider-wrapper">
+                <input type="range" id="knapsack-cap-slider" min="4" max="24" step="1" value="12">
+                <span class="slider-indicator" id="knapsack-cap-val">12 GB</span>
+              </div>
+            </div>
+
+            <div class="table-wrap" style="margin-bottom: 1rem;">
+              <table class="product-table" id="services-table">
+                <thead>
+                  <tr>
+                    <th>Microservice Name</th>
+                    <th>RAM Requirement</th>
+                    <th>Priority Yield</th>
+                    <th>Allocation State</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <!-- Populated dynamically -->
+                </tbody>
+              </table>
+            </div>
+
+            <div class="btn-row">
+              <button class="btn btn-primary" id="btn-run-knapsack">⚡ Compute Optimal Packing</button>
+            </div>
+
+            <div style="margin-top: 1.25rem; display: flex; gap: 1rem;">
+              <div class="stat-pill" style="flex: 1; justify-content: center; padding: 0.6rem;">
+                <span>Total Yield: <strong id="knap-max-val" style="color: #10b981; font-size: 1.05rem;">0</strong></span>
+              </div>
+              <div class="stat-pill" style="flex: 1; justify-content: center; padding: 0.6rem;">
+                <span>Allocated Memory: <strong id="knap-used-weight" style="color: #38bdf8; font-size: 1.05rem;">0</strong> / <span id="knap-cap-denom">12</span> GB</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="panel-card">
+            <div class="card-header">
+              <div>
+                <h3 class="card-title">Optimization Allocation Grid</h3>
+                <p class="card-desc">Dynamic programming state table determining maximum value subset</p>
+              </div>
+            </div>
+            <div class="table-wrap" style="max-height: 420px;">
+              <table class="product-table" id="knapsack-dp-table" style="font-family: var(--font-mono); font-size: 0.75rem; text-align: center;">
+                <!-- Populated dynamically -->
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= 5. GLOBAL TRAFFIC MESH ================= -->
+      <section id="tab-network" class="view-panel">
+        <div class="view-header">
+          <div class="view-category">Software-Defined Networking</div>
+          <h1 class="view-title">Global Mesh Router & Topology Hub</h1>
+          <p class="view-subtitle">
+            Calculate lowest-latency packet transit pathways, optimize inter-datacenter fiber backbone overlays, and perform instant cluster partition diagnostics.
+          </p>
+        </div>
+
+        <div class="grid-2">
+          <div class="panel-card">
+            <div class="card-header">
+              <div>
+                <h3 class="card-title">Cluster Network Topology</h3>
+                <p class="card-desc">Interactive gateway and microservice pod routing graph</p>
+              </div>
+              <span class="status-tag tag-queued" id="active-algo-badge">Lowest-Latency Path</span>
+            </div>
+
+            <div class="canvas-box">
+              <svg id="routing-svg" class="interactive-canvas"></svg>
+            </div>
+
+            <div style="display: flex; gap: 0.8rem; margin-top: 1rem; align-items: center; flex-wrap: wrap;">
+              <label class="form-label" style="margin: 0;">Origin Gateway / Node:</label>
+              <select id="routing-start-node" style="padding: 0.4rem 0.7rem; width: auto;">
+                <option value="0">Gateway US-East (Node 0)</option>
+                <option value="1">Auth & Security Pod (Node 1)</option>
+                <option value="2">Core Database Cluster (Node 2)</option>
+                <option value="3">Background Worker (Node 3)</option>
+                <option value="4">Redis Cache Node (Node 4)</option>
+                <option value="5">Gateway EU-West (Node 5)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="panel-card">
+            <div class="card-header">
+              <div>
+                <h3 class="card-title">Traffic Optimization Controls</h3>
+                <p class="card-desc">Run intelligent routing and resilience diagnostic routines</p>
+              </div>
+            </div>
+
+            <div class="btn-row" style="margin-bottom: 1.25rem;">
+              <button class="btn btn-primary" id="btn-algo-dijkstra">Lowest Latency (Dijkstra)</button>
+              <button class="btn btn-success" id="btn-algo-kruskal">Fiber Backbone (Kruskal)</button>
+              <button class="btn" id="btn-algo-prim">Overlay Mesh (Prim)</button>
+              <button class="btn" id="btn-algo-floyd">All-Pairs Latency Matrix</button>
+              <button class="btn" id="btn-algo-bfs">Blast-Radius Scan (BFS)</button>
+              <button class="btn" id="btn-algo-dfs">Partition Check (DFS)</button>
+            </div>
+
+            <div class="console-output" id="routing-terminal">
+              // Choose a network routine above to trigger real-time routing analysis...
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= 6. FAULT TOLERANCE ================= -->
+      <section id="tab-ha" class="view-panel">
+        <div class="view-header">
+          <div class="view-category">High-Availability Infrastructure</div>
+          <h1 class="view-title">Zero-Collision Server Rack Placement</h1>
+          <p class="view-subtitle">
+            Deploy mission-critical redundant microservice pods across server racks such that no two pods share the same power bus (row), top-of-rack network switch (column), or thermal exhaust channel (diagonal).
+          </p>
+        </div>
+
+        <div class="grid-2">
+          <div class="panel-card">
+            <div class="card-header">
+              <div>
+                <h3 class="card-title">Rack Matrix Configuration</h3>
+                <p class="card-desc">Specify cluster rack dimensions and explore conflict-free topologies</p>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Cluster Server Rack Grid Size:</label>
+              <div class="slider-wrapper">
+                <input type="range" id="queens-n-slider" min="4" max="10" step="1" value="8">
+                <span class="slider-indicator" id="queens-n-val">8 × 8</span>
+              </div>
+            </div>
+
+            <div class="btn-row" style="margin-top: 1rem;">
+              <button class="btn btn-primary" id="btn-solve-queens">🛡️ Compute Valid Placements</button>
+              <button class="btn" id="btn-prev-queen-sol" disabled>◀ Previous Layout</button>
+              <button class="btn" id="btn-next-queen-sol" disabled>Next Layout ▶</button>
+            </div>
+
+            <div style="margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid var(--border-subtle); font-size: 0.85rem;">
+              <div style="margin-bottom: 0.45rem;">
+                Valid Zero-Collision Layouts: <strong id="queens-total-solutions" style="color: #38bdf8;">0</strong>
+              </div>
+              <div>
+                Current Topology Index: <strong id="queens-current-idx" style="color: #10b981;">-</strong>
+              </div>
+            </div>
+
+            <div style="margin-top: 1.5rem; font-size: 0.8rem; color: var(--text-secondary); line-height: 1.5;">
+              💡 <em>Guarantees complete physical fault isolation across row power lines, column switches, and diagonal cooling zones using branch-and-bound constraint validation.</em>
+            </div>
+          </div>
+
+          <div class="panel-card" style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
+            <div class="card-header" style="width: 100%;">
+              <div>
+                <h3 class="card-title">Physical Server Rack Layout</h3>
+                <p class="card-desc">Visual distribution of critical container instances</p>
+              </div>
+            </div>
+            <div class="rack-matrix" id="chessboard-container">
+              <!-- Rendered dynamically -->
+            </div>
+            <div style="font-size: 0.78rem; color: var(--text-secondary); margin-top: 0.5rem;">
+              🛡️ = Isolated Mission-Critical Container Instance
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
